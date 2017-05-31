@@ -6,7 +6,7 @@ defmodule SortKataTest do
     assert SortKata.sort([]) == []
   end
 
-  test "list is already sorted1" do
+  test "one element sorted" do
     assert SortKata.sort([10]) == [10]
   end
 
