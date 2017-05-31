@@ -17,22 +17,20 @@ defmodule SortKata do
   end
 
   def sort([first_element | []], sorted_list) do
-    IO.puts "s1 #{first_element}"
     sorted_list ++ [first_element]
   end
 
   def sort([first_element | [second_element | tail]], sorted_list) do
     [first_element, second_element] = swap(first_element, second_element)
-    IO.puts "s2 #{first_element}"
     sort([second_element | tail], sorted_list ++ [first_element])
   end
 
-  defp swap(first_element, second_element) do
-    if first_element <= second_element do
+  defp swap(first_element, second_element) when first_element <= second_element do
       [first_element, second_element]
-    else
+  end
+
+  defp swap(first_element, second_element) do
       [second_element, first_element]
-    end
   end
   
 end

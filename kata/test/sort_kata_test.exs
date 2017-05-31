@@ -6,15 +6,23 @@ defmodule SortKataTest do
     assert SortKata.sort([]) == []
   end
 
+  test "list is already sorted1" do
+    assert SortKata.sort([10]) == [10]
+  end
+
   test "list is already sorted" do
     assert SortKata.sort([1,10]) == [1, 10]
   end
 
-  test "swap elements" do
+  test "sort elements" do
     assert SortKata.sort([10,1]) == [1, 10]
   end
 
-  test "swap many elements" do
+  test "sort many elements" do
     assert SortKata.sort([10,2, 3, 1, 8]) == [1, 2, 3, 8, 10]
+  end
+
+  test "sort many elements with duplicates" do
+    assert SortKata.sort([10,2, 1, 8, 3, 1, 8]) == [1, 1, 2, 3, 8, 8, 10]
   end
 end
